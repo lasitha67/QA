@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="4.892" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="User Management" name="Add a new user successfully" time="0.208">
+<system-out><![CDATA[
+Given I have a user with name "John Doe", email "john@example.com", and age 30.passed
+When I add the user to the system...........................................passed
+Then the user should be saved successfully..................................passed
+And the response should contain the user details............................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Management" name="Fail to add user with duplicate email" time="0.025">
+<system-out><![CDATA[
+Given a user with email "john@example.com" already exists in the system.....passed
+When I try to add another user with email "john@example.com"................passed
+Then the system should return a duplicate email error.......................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Management" name="Delete an existing user successfully" time="0.031">
+<system-out><![CDATA[
+Given a user with ID exists in the system...................................passed
+When I delete the user......................................................passed
+Then the user should be removed from the system.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="User Management" name="Fail to delete non-existent user" time="0.002">
+<system-out><![CDATA[
+Given no user with ID 999 exists in the system..............................passed
+When I try to delete user with ID 999.......................................passed
+Then the system should return a user not found error........................passed
+]]></system-out>
+</testcase>
+</testsuite>
